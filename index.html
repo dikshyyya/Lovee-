@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>for you</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #e0f2fe, #fce7f3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .card {
+    background: white;
+    padding: 45px;
+    border-radius: 26px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  }
+
+  h1 {
+    font-size: 2.4em;
+    color: #ec4899;
+    margin-bottom: 15px;
+  }
+
+  .heart {
+    font-size: 2.3em;
+    margin-bottom: 18px;
+    animation: beat 1s infinite;
+  }
+
+  @keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+  }
+
+  #typing {
+    font-size: 1.15em;
+    color: #555;
+    min-height: 1.5em;
+  }
+
+  .cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%,50% { opacity: 1; }
+    51%,100% { opacity: 0; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>I love you< bhudu babyy🥹💋/h1>
+  <div class="heart">🪼💗</div>
+  <div id="typing"></div>
+</div>
+
+<script>
+  const text = "no big reason. just love. always.";
+  let index = 0;
+  const speed = 70;
+
+  function typeText() {
+    if (index < text.length) {
+      document.getElementById("typing").innerHTML =
+        text.substring(0, index + 1) + "<span class='cursor'>|</span>";
+      index++;
+      setTimeout(typeText, speed);
+    } else {
+      document.getElementById("typing").innerHTML =
+        text + " <span class='cursor'>|</span>";
+    }
+  }
+
+  typeText();
+</script>
+
+</body>
+</html>
